@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 [System.Serializable]
 public class playerStats{
@@ -203,8 +202,4 @@ public class playerStats{
 		}
 		return matrix;
 	}
-
 }
-
-
-

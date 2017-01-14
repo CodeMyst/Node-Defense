@@ -1,10 +1,5 @@
-﻿
-
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEngine.EventSystems;
-using System.Collections;
 
 public class mainMenu : MonoBehaviour {
 
@@ -59,15 +54,22 @@ public class mainMenu : MonoBehaviour {
 			}
 		}
 
-		//If player has played a game using the New Player name without saving, show their stats, other wise they've just started the game and set their temp stats = to a new player
-		if(playerStats.current != null){
-				showStats ();
-				setLoadText (playerStats.saveIndex);
-		} else {
-				tempStats = new playerStats ();
+        //If player has played a game using the New Player name without saving,
+        //show their stats, other wise they've just started the game and set
+        //their temp stats = to a new player
+		if(playerStats.current != null)
+        {
+			showStats ();
+			setLoadText (playerStats.saveIndex);
+		}
+        else
+        {
+			tempStats = new playerStats ();
 		}
 
-		InvokeRepeating("SlowUpdate", 0.1f, 2f); //Update the level of the user (but slowly)
+        // Update the level of the user every 2 seconds so it won't
+        // cause any performance issues
+		InvokeRepeating("SlowUpdate", 0.1f, 2f);
 	}
 
 	//Called every x Seconds
@@ -221,7 +223,9 @@ public class mainMenu : MonoBehaviour {
 		toClose.SetActive (false);
 	}
 
-	//Neat move where the camera rotates up into the sky box to make room for UI elements (takes in a gameobject (which should hold a set of UI elements)
+    //Neat move where the camera rotates up into the sky box to make
+    //room for UI elements (takes in a gameobject (which should hold
+    //a set of UI elements))
 	/*public void rotateCameraUpAndOpen(GameObject toOpen){
 		mainUI.SetActive (false);
 		toOpen.SetActive (true);
@@ -239,5 +243,5 @@ public class mainMenu : MonoBehaviour {
 	* Skill functions
 	*/
 
-
+    // TODO: Skill functions? Is this intentional?
 }

@@ -1,11 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using System.Collections;
 
 public class skillMenu : MonoBehaviour {
 
-	public Text skillPointsLeft;
+	public Text skillPointsLeft; // Text object for storing how manu skill points there are left
 	public Text[] skillCounts; //Array holding the text objects for each tree tally
 	
 	// Update is called once per frame
@@ -29,8 +27,8 @@ public class skillMenu : MonoBehaviour {
 		}
 	}
 
+    // Reset the skill points
 	public void resetPoints(){
 		playerStats.current.resetSkills ();
 	}
-
 }

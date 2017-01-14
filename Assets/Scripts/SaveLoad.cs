@@ -1,14 +1,16 @@
 ﻿using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+// Used for saving and loading a game
 [System.Serializable]
 public class SaveLoad : MonoBehaviour{
 
+    // The path to saved games
 	private static string savedGamesPath = Application.persistentDataPath + "/savedGames.tdi";
 
+    // Get the list of saved games
 	public static List<playerStats> savedGames = new List<playerStats>();
 
 	//Save the current list of games as the saved games and serialize it
@@ -38,6 +40,5 @@ public class SaveLoad : MonoBehaviour{
 			return true;
 		}
 		return false;
-	}
-		
+	}	
 }

@@ -164,5 +164,4 @@ public class waveSpawner : MonoBehaviour {
 	public static int getLastWave(){
 		return waveSpawner.waves [0].getWaveNumber();
 	}
-
 }

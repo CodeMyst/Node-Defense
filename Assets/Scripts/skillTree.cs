@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class skillTree : MonoBehaviour{
 
@@ -31,10 +30,12 @@ public class skillTree : MonoBehaviour{
 
 	//Add a point to this skill tree
 	public void addSkillPoint(){
-		if (playerStats.current.getSkillPointsLeft () >= 1)
-			if(playerStats.current.skillPointsAtThisIndex(treeIndex) < 12)
-				playerStats.current.addSkillPoint(treeIndex);
+        if (playerStats.current.getSkillPointsLeft() >= 1)
+        {
+            if (playerStats.current.skillPointsAtThisIndex(treeIndex) < 12)
+            {
+                playerStats.current.addSkillPoint(treeIndex);
+            }
+        }
 	}
-
-
 }

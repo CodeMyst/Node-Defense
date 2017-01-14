@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class livesUI : MonoBehaviour {
 
@@ -10,5 +9,4 @@ public class livesUI : MonoBehaviour {
 	void Update(){
 		livesText.text = gameStats.lives.ToString();
 	}
-
 }

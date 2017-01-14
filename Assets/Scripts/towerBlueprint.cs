@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 [System.Serializable]
 public class towerBlueprint {
 
-	public GameObject prefab;
+	public GameObject prefab; // Prefab of the tower
 	public string name; //Name to display for this tower
 	[Space (10)]
-	public int cost;
+	public int cost; // Tower's cost
 	public int baseCost;
 	public Text costLabel;
 
@@ -21,5 +20,4 @@ public class towerBlueprint {
 	public void reduceCost(float amount){
 		cost = Mathf.FloorToInt(baseCost * (1f - amount));
 	}
-
 }

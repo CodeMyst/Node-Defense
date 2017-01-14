@@ -1,7 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using System.Collections.Generic;
 
 public class Shop : MonoBehaviour {
 
@@ -17,6 +14,7 @@ public class Shop : MonoBehaviour {
 	private GameObject masterGO;
 	private activeBuffs aB;
 
+    // Used for initialization
 	void Start(){
 		//Setup Objects for Shop
 		masterGO = GameObject.Find ("Game Master");
@@ -38,7 +36,6 @@ public class Shop : MonoBehaviour {
 			}
 			t.setCostLabel ();
 		}
-
 	}
 
 	void Update(){
@@ -50,7 +47,6 @@ public class Shop : MonoBehaviour {
 			selectLaserTower();
 		else if(Input.GetKeyDown(KeyCode.Alpha4) || Input.GetKeyDown(KeyCode.Keypad3))
 			selectSniperTower();
-
 	}
 
 	//Select the turret tower 
@@ -80,5 +76,4 @@ public class Shop : MonoBehaviour {
 	public void selectAllegroTower(){
 		buildManager.selectTowerToBuild (basicTowers [5]);
 	}
-
 }

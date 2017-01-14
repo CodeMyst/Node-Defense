@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Linq;
-using System.Collections;
 using System.Collections.Generic;
 
 public class Tower : MonoBehaviour {
@@ -599,6 +598,5 @@ public class Tower : MonoBehaviour {
 				return debuffs[i];
 		}
 		return null;
-	}
-		
+	}	
 }

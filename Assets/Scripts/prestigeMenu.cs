@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class prestigeMenu : MonoBehaviour {
 
@@ -31,12 +30,14 @@ public class prestigeMenu : MonoBehaviour {
 		}
 	}
 
+    // Called when this game object is enabled/set active
 	void OnEnable(){
 		setActivePrestigeLabels ();
 	}
 
 	// Use this for initialization
 	void Start () {
+        // Make the prestige button uninteractable
 		prestigeButton.interactable = false;
 	}
 	

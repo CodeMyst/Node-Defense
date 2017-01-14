@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class NodeUI : MonoBehaviour {
 
@@ -32,11 +31,13 @@ public class NodeUI : MonoBehaviour {
 
 	private Node target;
 
+    // Used for initialization
 	void Start(){
+        // Get the build manager singleton instance
 		buildManager = BuildManager.instance;
-
 	}
 
+    // Called every frame update
 	void Update(){
 		//Update kill count while tower is selected
 		if (target != null)
@@ -47,9 +48,8 @@ public class NodeUI : MonoBehaviour {
 	}
 
 	//Set the target node for the UI to show up above, passed in from buildManager
-	public void setTarget(Node t){
-
-
+	public void setTarget(Node t)
+    {
 		target = t;
 		Tower tower = target.towerHere.GetComponent<Tower> (); //Tower component of tower on this node
 
@@ -60,8 +60,6 @@ public class NodeUI : MonoBehaviour {
 			showUps.interactable = false;
 		else
 			showUps.interactable = true;
-
-			
 
 		//Show the values for upgrading/selling the tower
 		costUp1Label.text = "$" + tower.upgradesTo1.cost;
@@ -163,7 +161,4 @@ public class NodeUI : MonoBehaviour {
 	public void sellTower(){
 		buildManager.Sell (target);
 	}
-		
-
-
 }

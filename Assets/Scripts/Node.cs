@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections;
 
 public class Node : MonoBehaviour {
 
@@ -33,15 +32,16 @@ public class Node : MonoBehaviour {
 
 	public bool hasTower(){ return towerHere != null; } //Does the node have a tower
 
+    // Used for initialization
 	void Start(){
-		rend = GetComponent<Renderer> (); // Find/Set the renderer
+		rend = GetComponent<Renderer> (); // Get the renderer component
 		if(isSpecial)
 			startColor = specialColor; //Node is special
 		else
 			startColor = rend.material.color; //Find/Set the renderer
 		
 		buildManager = BuildManager.instance; //Set the buildmanager instance
-		rend.material.color = startColor;
+		rend.material.color = startColor; // Change the color to the start color
 	}
 
 	//Get the position of the node and its position offset (puts build position in the center when instantiating)
@@ -65,6 +65,7 @@ public class Node : MonoBehaviour {
 			rangeIndicator.transform.localScale = new Vector3(buildManager.getTowerToBuild ().prefab.GetComponent<Tower> ().range/2f, 0, buildManager.getTowerToBuild ().prefab.GetComponent<Tower> ().range/2f);
 			rangeIndicator.SetActive (true);
 		}
+        // If the player doesn't have enough money change the color
 		else
 			rend.material.color = notEnoughMoneyColor;
 	}
@@ -107,7 +108,5 @@ public class Node : MonoBehaviour {
 		//If tower successfully built then set t = to it
 		if(towerHere != null)
 			t = towerHere.GetComponent<Tower> ();
-
 	}
-
 }
