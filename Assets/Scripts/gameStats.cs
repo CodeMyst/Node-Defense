@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class gameStats : MonoBehaviour {
 
@@ -14,7 +13,10 @@ public class gameStats : MonoBehaviour {
 	[Space(10)]
 	public int startLives;
 
+    // Used for initialization
 	void Start(){
+        // When the game starts reset the money and lives since
+        // money and lives are static variables
 		money = startMoney;
 		lives = startLives;
 		waves = 0;
@@ -61,6 +63,5 @@ public class gameStats : MonoBehaviour {
 			enemyDiffDelta = 1.8f;
 		else if (diff == diffMenu.impossibleEnemyMult)
 			enemyDiffDelta = 2f;
-
 	} 
 }
