@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
+// This script takes care of difficulty selection and applying
+// that difficulty to the game
 public class diffMenu : MonoBehaviour {
 
+    // List of all available difficulties
 	public enum Difficulties {EASY, MEDIUM, HARD, TORTURE, HELL, IMPOSSIBLE} 
 
 	//Multiplier values for experience gains after a game ends
@@ -105,14 +107,17 @@ public class diffMenu : MonoBehaviour {
 			impossibleMap.interactable = false;
 	}
 
+    // Starts the game by loading a scene
 	public void startGame(){
 		SceneManager.LoadScene (gameStats.mapDiffDelta);
 	}
 
+    // Change the maps difficulty
 	public void changeMap(float diff){
 		gameStats.setMapDiff(diff);
 	}
 
+    // Set the enemy difficulty
 	public void setEnemyDiff(float diff){
 		gameStats.setEnemyDiff (diff);
 	}
