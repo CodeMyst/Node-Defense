@@ -18,12 +18,17 @@ public class diffMenu : MonoBehaviour {
 	public static float impossibleEnemyMult = 2f, impossibleMapMult = 2f;
 
 	[Header ("Buttons")]
-	public Button start;
+	public GameObject startNode;
+    public Button startButton;
+    public Color buttonStartColor;
+    public Color buttonDisabledColor;
 	public Button medEnemy, medMap;
 	public Button hardEnemy, hardMap;
 	public Button tortureEnemy, tortureMap;
 	public Button hellEnemy, hellMap;
 	public Button impossibleEnemy, impossibleMap;
+
+    private Renderer startRenderer;
 
 	[Header ("Text")]
 	public Text bonusText;
@@ -41,6 +46,12 @@ public class diffMenu : MonoBehaviour {
 
 	//private int bonusVal = ;
 
+    // Used for initialization
+    void Start()
+    {
+        startRenderer = startNode.GetComponent<Renderer>();
+    }
+
 	void Update(){
 		//Show experience bonus percentage
 		if (gameStats.enemyDiff >= 0 && gameStats.mapDiff >= 0)
@@ -50,9 +61,11 @@ public class diffMenu : MonoBehaviour {
 
 		//Don't allow the player to start unless they've selected a difficulty/map yet
 		if (gameStats.enemyDiff >= 0 && gameStats.mapDiff >= 0) {
-			start.enabled = true;
+			startRenderer.material.color = buttonStartColor;
+            startButton.interactable = true;
 		} else {
-			start.enabled = false;
+            startRenderer.material.color = buttonDisabledColor;
+            startButton.interactable = false;
 		}
 
 		//Unlocks medium and hard difficulties at certain levels

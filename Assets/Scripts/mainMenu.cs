@@ -160,7 +160,7 @@ public class mainMenu : MonoBehaviour {
 
 	public void openSkills(){
 		openScreen (skillUI);
-	}
+    }
 
 	public void closeSkills(){
 		if (GameObject.FindGameObjectWithTag ("Tree") != null)
@@ -168,8 +168,7 @@ public class mainMenu : MonoBehaviour {
 		closeScreen (skillUI);
 		if(saveIndex >= 0)
 			setSave (playerStats.current.saveName); //Save upon leaving skill tree
-		
-	}
+    }
 
 	public void openPrestige(){
 		openScreen (prestigeUI);
@@ -203,11 +202,11 @@ public class mainMenu : MonoBehaviour {
 		gameStats.setEnemyDiff (-1);
 		gameStats.setMapDiff (-1);
 		openScreen (diffUI);
-	}
+    }
 
 	public void closeDiff(){
 		closeScreen (diffUI);
-	}
+    }
 		
 	/*
 	* Camera Controls for Menu

@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class skillMenu : MonoBehaviour {
-
-	public Text skillPointsLeft; // Text object for storing how manu skill points there are left
+public class skillMenu : MonoBehaviour
+{
+    public Text skillPointsLeft; // Text object for storing how manu skill points there are left
 	public Text[] skillCounts; //Array holding the text objects for each tree tally
 	
+
 	// Update is called once per frame
 	void Update () {
 		//Let the player know how many points they have left to allocate
