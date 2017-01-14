@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 using System.Collections.Generic;
 
 public class BuildManager : MonoBehaviour {
@@ -46,7 +45,7 @@ public class BuildManager : MonoBehaviour {
 
 	void Update(){
 		
-		//Deselect a node when pressing Escape
+		//Deselect a node or a turret when pressing Escape
 		if(Input.GetKeyDown(KeyCode.Escape)){
 			if (selectedNode != null)
 				deselectNode ();
@@ -223,6 +222,4 @@ public class BuildManager : MonoBehaviour {
 	void setMessage(string s){
 		message.text = s;
 	}
-
-
 }
