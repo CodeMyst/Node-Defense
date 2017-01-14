@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 //This class handles updating the enemies debuffs and movement every tick 
 //Enemy does not have an update function like this class
@@ -9,16 +8,17 @@ public class enemyUpdate : MonoBehaviour {
 	
 	private Transform target; // Current waypoint we are pursuing (Object)
 	private int waypointIndex = 0; //Current waypoint we are pursuing (Index)
-	private Enemy enemy;
-	private Renderer enemyGraphics;
+	private Enemy enemy; // The actual enemy
+	private Renderer enemyGraphics; // Used for storing the renderer components of an enemy
 
+    // Used for initialization
 	void Start(){
 		enemy = GetComponent<Enemy> (); //Get enemy component of Gameobject
 		target = waypoints.wps [0]; //First waypoint is the target for an enemy off its spawn
 		enemyGraphics = enemy.GetComponentInChildren<Renderer> (); //Get renderer component of enemy
 	}
 
-	//Every Frame
+	// Called every frame update
 	void Update(){
 		Vector3 dir = target.position - transform.position; // Gives us direction to go in order to get to target
 		transform.Translate(dir.normalized * enemy.moveSpeed * Time.deltaTime, Space.World); //Move in this position
@@ -85,6 +85,4 @@ public class enemyUpdate : MonoBehaviour {
 			target = waypoints.wps [waypointIndex];
 		}
 	}
-
-
 }
