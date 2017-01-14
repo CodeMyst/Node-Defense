@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+// Used for applying debuffs to towers
 [System.Serializable]
 public class debuff {
 
