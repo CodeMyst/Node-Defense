@@ -121,5 +121,4 @@ public class diffMenu : MonoBehaviour {
 	public void setEnemyDiff(float diff){
 		gameStats.setEnemyDiff (diff);
 	}
-
 }
