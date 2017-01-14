@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour {
 
@@ -82,10 +80,10 @@ public class Enemy : MonoBehaviour {
 	//Init Function
 	void Start(){ 
 		//Set Current wave stats for this enemy
-		moveSpeed =  waveSpeed = getSpeed();
+		moveSpeed = waveSpeed = getSpeed();
 		health = waveHealth = getHealth();
 		worth = getWorth();
-		waveCount = getCount ();
+		waveCount = getCount();
 		resistStrength = waveResistStrength = getResistStrength ();
 
 		//Assign Resists
