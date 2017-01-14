@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+// Fix the user's aspect ratio by adding a letterbox or pillars
 public class aspectRatio : MonoBehaviour {
 
 	// Use this for initialization
