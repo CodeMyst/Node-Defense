@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
-
-public class enemyGUI : MonoBehaviour {
-
+// Used for displaying information about the enemies
+public class enemyGUI : MonoBehaviour
+{
+    // Singleton instance
 	public static enemyGUI instance;
 
 	[Header ("Texts")]
@@ -15,21 +15,27 @@ public class enemyGUI : MonoBehaviour {
 
 	private Enemy target;
 
+    // Used for initialization
 	void Start(){
-		if (instance != null) { //Error check
+        // Singleton pattern error checking
+		if (instance != null) {
 			Debug.Log ("More than one instance in scene!");
 			return;
 		}
 		instance = this; //Sets the enemyGUI to a static variable which can be accessed from anywhere
 	}
 
+    // Called every frame update
 	void Update(){
+        // If there is a target display the stats
 		if (target != null)
 			setStats ();
+        // Else, empty the stats texts
 		else
 			emptyStats ();
 	}
 
+    // Display the stats
 	public void setStats(){
 		setSpeed ();
 		setHealth ();
@@ -37,12 +43,19 @@ public class enemyGUI : MonoBehaviour {
 		setResists ();
 	}
 
+    // Empty the stats texts
 	public void emptyStats(){
 		speed.text = "-";
 		health.text = "-";
 		worth.text = "-";
 		resists.text = " ";
 	}
+
+    /*
+     * 
+     * DISPLAY THE STATS
+     * 
+     */ 
 
 	public void setSpeed(){
 		speed.text = target.moveSpeed.ToString ("F2");
@@ -56,14 +69,15 @@ public class enemyGUI : MonoBehaviour {
 		worth.text = target.worth.ToString ();
 	}
 
+    // Display the resists of an enemy
 	public void setResists(){
 		foreach (Resist r in target.resistList) {
 			resists.text = r.type + "\n";
 		}
 	}
 
+    // Set the target
 	public void setTarget(Enemy e){
 		target = e;
 	}
-
 }
