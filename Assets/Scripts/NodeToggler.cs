@@ -27,7 +27,10 @@ public class NodeToggler : MonoBehaviour
         {
             foreach (GameObject node in _nodesToEnable)
             {
-                node.SetActive(true);
+                if (node != null)
+                {
+                    node.SetActive(true);
+                }
             }
         }
     }

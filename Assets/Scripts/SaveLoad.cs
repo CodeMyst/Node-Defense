@@ -8,10 +8,16 @@ using System.IO;
 public class SaveLoad : MonoBehaviour{
 
     // The path to saved games
-	private static string savedGamesPath = Application.persistentDataPath + "/savedGames.tdi";
+	private static string savedGamesPath;
 
     // Get the list of saved games
 	public static List<playerStats> savedGames = new List<playerStats>();
+
+    // Used for initializaton
+    void Awake()
+    {
+        savedGamesPath = Application.persistentDataPath + "/savedGames.tdi";
+    }
 
 	//Save the current list of games as the saved games and serialize it
 	public static void Save(int index){
